@@ -9,11 +9,12 @@ const post = require("./api/routes/post");
 
 const app = express();
 
-// const http = require("http");
+const http = require("http");
 
-// const server = http.createServer(app);
+const server = http.createServer(app);
 
-// var io = require("socket.io").listen(server);
+var io = require("socket.io").listen(server);
+const likes = require("./api/routes/likes")(io);
 
 // app.io = io;
 
