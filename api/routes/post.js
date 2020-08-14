@@ -31,6 +31,7 @@ router.post("/add-post", upload.single("post_image"), (req, res, next) => {
     caption: req.body.caption,
     created_at: new Date(),
     userId: req.body.userId,
+    total_likes: 0,
     post_image: req.file.path,
   });
 

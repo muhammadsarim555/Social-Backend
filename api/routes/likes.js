@@ -15,15 +15,23 @@
 //   });
 // });
 
+// exports = module.exports = function (io) {
+//   io.sockets.on("connection", function (socket) {
+//     console.log("New client connected");
+//     //   socket.on('file2Event', function () {
+//     //     console.log('file2Event triggered');
+//     //   });
+
+//     io.sockets.on("disconnect", function () {
+//       console.log("Client disconnected");
+//     });
+//   });
+// };
+
 exports = module.exports = function (io) {
   io.sockets.on("connection", function (socket) {
-    console.log("New client connected");
-    //   socket.on('file2Event', function () {
-    //     console.log('file2Event triggered');
-    //   });
-
-    io.sockets.on("disconnect", function () {
-      console.log("Client disconnected");
+    socket.on("file1Event", function () {
+      console.log("file1Event triggered");
     });
   });
 };
